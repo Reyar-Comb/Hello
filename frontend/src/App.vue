@@ -5,10 +5,10 @@ const message = ref('awaiting...')
 
 const getData = async() => {
   try {
-    const response = await fetch('https://localhost:8080/api/hello')
+    const response = await fetch('/api/hello')
 
-    const test = await response.text()
-    message.value = text
+    const json = await response.json()
+    message.value = json.message
   } catch(error){
     message.value = 'this is a bug'
   }
