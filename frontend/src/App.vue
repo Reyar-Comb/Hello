@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const message = ref('awaiting...')
+const message = ref('Clock')
 
 const getData = async() => {
   try {
@@ -9,6 +9,8 @@ const getData = async() => {
 
     const json = await response.json()
     message.value = json.message
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    message.value = 'Clock'
   } catch(error){
     message.value = 'this is a bug'
   }
@@ -18,7 +20,6 @@ const getData = async() => {
 <template>
   <div class="box">
     <h1>{{ message }}</h1>
-
     <button @click="getData">What time is it?</button>
   </div>
 </template>
