@@ -39,9 +39,7 @@ jobs:
                 host: ${{ secrets.HOST }}
                 username: ${{ secrets.USERNAME }}
                 key: ${{ secrets.KEY }}
-                source: |
-                    ./backend/main
-                    ./frontend/dist/
+                source: "backend/main,frontend/dist/*"
                 target: "/home/${{ secrets.USERNAME }}/repos/hello/temp"
                 strip_components: 1
         
