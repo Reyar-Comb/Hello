@@ -10,7 +10,7 @@ import (
 
 func TimeNow() string {
 	timestr := time.Now()
-	newtime := timestr.Format(time.RFC3339)[0:10] + " " + timestr.Format(time.RFC3339)[11:19]
+	newtime := timestr.Format(time.RFC3339)[11:19]
 	return newtime
 }
 func main() {
