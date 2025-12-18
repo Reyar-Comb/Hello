@@ -85,9 +85,9 @@ const getData = async() => {
 }
 
 .diagonal-row {
-  width: 300%;
-  height: 6rem;
-  margin-bottom: 1rem;
+  width: 400%;
+  height: 5rem;
+  margin-bottom: 2rem;
   gap: 10rem;
   animation: scroll-diagonal 150s linear infinite;
   will-change: transform;
@@ -97,6 +97,7 @@ const getData = async() => {
 .diagonal-row:nth-child(2n) {
   animation-duration: 130s;
   animation-delay: -9s;
+  animation-direction: reverse;
 }
 
 @keyframes scroll-diagonal {
