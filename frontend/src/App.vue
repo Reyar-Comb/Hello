@@ -1,9 +1,13 @@
 <script setup>
 import { ref } from 'vue'
+import bgImage from '../assets/developing.png'
 
 const message = ref('Clock')
+const isLoading = ref(false)
 const UpdateTime = "     " + BUILD_TIME
 const getData = async() => {
+  if (isLoading.value) return
+  isLoading.value = true
   try {
     const response = await fetch('/api/hello')
 
@@ -13,6 +17,8 @@ const getData = async() => {
     message.value = 'Clock'
   } catch(error){
     message.value = 'this is a bug'
+  } finally {
+    isLoading.value = false
   }
 }
 
@@ -25,10 +31,15 @@ const getData = async() => {
     <!-- Background Scrolling Text -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
       <div class="diagonal-scroll-container">
-        <div class="diagonal-row animate-scroll-diagonal" v-for="i in 10" :key="i">
-          <template v-for="k in 2" :key="k">
-            <img v-for="j in 12" :key="`${k}-${j}`" src="../assets/developing.png" alt="" class="h-24" />
-          </template>
+        <div 
+          class="diagonal-row animate-scroll-diagonal bg-repeat-x" 
+          v-for="i in 10" 
+          :key="i"
+          :style="{
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'auto 96px' 
+          }"
+        >
         </div>
       </div>
     </div>
@@ -74,16 +85,14 @@ const getData = async() => {
 }
 
 .diagonal-row {
-  display: flex;
+  width: 300%;
+  height: 6rem;
+  margin-bottom: 1rem;
   gap: 10rem;
   animation: scroll-diagonal 150s linear infinite;
-  width: max-content;
+  will-change: transform;
 }
 
-.diagonal-row img {
-  flex-shrink: 0;
-  opacity: 0.9;
-}
 
 .diagonal-row:nth-child(2n) {
   animation-duration: 130s;
