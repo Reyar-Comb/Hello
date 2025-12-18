@@ -48,7 +48,7 @@ const getData = async() => {
     <footer class="text-center mb-5 text-lg text-gray-500">
       <span>Last Updated:</span>
       <span class="ml-4 font-bold text-gray-600">{{ UpdateTime }}</span>
-      <span class="ml-4 font-normal text-blue-800"><a href="https://space.bilibili.com/238730660?spm_id_from=333.1007.0.0" target="blank" rel="noopener noreferrer">@ 2025 Reyar</a></span>
+      <span class="ml-4 font-normal text-blue-800" whitespace-nowrap><a href="https://space.bilibili.com/238730660?spm_id_from=333.1007.0.0" target="blank" rel="noopener noreferrer">@ 2025 Reyar</a></span>
     </footer>
   </div>
   
