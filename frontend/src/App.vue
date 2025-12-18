@@ -33,12 +33,12 @@ const getData = async() => {
       </div>
     </div>
     <div class="flex-1 flex items-center justify-center">
-      <div class="bg-white/70 backdrop-blur-xl border border-white/50 rounded-2xl shadow-2xl p-12 max-w-md w-full">
+      <div class="bg-white/70 backdrop-blur-xl border border-white/50 rounded-2xl shadow-2xl p-8 md:p-12 max-w-md w-full mx-4">
         <div class="text-center mt-20">
           <h1 class="text-center text-6xl font-bold">{{ message }}</h1>
           <button 
             @click="getData"
-            class="mt-20 px-5 py-2.5 bg-blue-600 text-white rounded hover:bg-blue-700 hover:scale-103 active:scale-99 transition"
+            class="mt-20 px-5 py-2.5 bg-blue-600 text-white rounded hover:bg-blue-700 hover:scale-103 active:scale-95 transition"
           >
             What time is it?
           </button>
@@ -48,7 +48,10 @@ const getData = async() => {
     <footer class="text-center mb-5 text-lg text-gray-500">
       <span>Last Updated:</span>
       <span class="ml-4 font-bold text-gray-600">{{ UpdateTime }}</span>
-      <span class="ml-4 font-normal text-blue-800" whitespace-nowrap><a href="https://space.bilibili.com/238730660?spm_id_from=333.1007.0.0" target="blank" rel="noopener noreferrer">@ 2025 Reyar</a></span>
+      <div>
+        <span class="ml-4 font-normal text-blue-800"><a href="https://space.bilibili.com/238730660?spm_id_from=333.1007.0.0" target="blank" rel="noopener noreferrer">@ 2025 Reyar</a></span>
+      </div>
+      
     </footer>
   </div>
   
